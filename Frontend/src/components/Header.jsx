@@ -16,21 +16,15 @@ function Header() {
   };
 
   return (
-    <header className="bg-blue-600 text-white p-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Logo or App Name */}
-        <div className="text-xl font-bold">100ms Video Conference</div>
-
-        {/* Leave Room Button */}
+    <header className="bg-blue-600 text-white p-4 h-20">
         {isConnected && (
           <button
             onClick={handleLeaveRoom}
-            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded"
+            className="btn flex bg-red-600"
           >
             Leave Room
           </button>
         )}
-      </div>
     </header>
   );
 }

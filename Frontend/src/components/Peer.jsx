@@ -1,4 +1,5 @@
 import { useVideo } from "@100mslive/react-sdk";
+import "./Peer.css"
 
 function Peer({ peer }) {
   const { videoRef } = useVideo({
@@ -13,11 +14,14 @@ function Peer({ peer }) {
         muted
         playsInline
       />
-      <div className="peer-name">
-        {peer.name} {peer.isLocal ? "(You)" : ""}
+      <div className="peer-overlay">
+        <div className="peer-name">
+          {peer.name} {peer.isLocal ? "(You)" : ""}
+        </div>
       </div>
     </div>
   );
 }
+
 
 export default Peer;

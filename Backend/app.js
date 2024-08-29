@@ -13,21 +13,18 @@ app.use(
   })
 );
 
-//setting a limit to accept JSON
-app.use(
-  express.json({
-    limit: "16kb",
-  })
-);
+//setting a limit to accept JSON 
+app.use(express.json({
+    limit: "16000000000000000kb"
+}))
 
 //setting up URL encoder
 app.use(
   express.urlencoded({
     extended: true,
     //extended allows nested objects from URL (idk what it is)
-    limit: "16kb",
-  })
-);
+    limit: "16kb"
+}))
 
 //public assets which we have used (public folder)
 app.use(express.static("public"));
