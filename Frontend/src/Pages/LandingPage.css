@@ -1,48 +1,84 @@
-/* LandingPage.css */
-
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    overflow-y: hidden; /* Prevent vertical scroll */
+    background-color: #222;
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 300;
+  }
+  h1,
+  h2 {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+  .panel pre.prettyprint {
+    font-size: 20px;
+    text-align: left;
+    width: auto;
+    font-weight: normal;
+    margin: 10px;
+    border: none;
+  }
+  .prettyprint .linenums {
+    padding: 0;
+    list-style: none;
+  }
+  .prettyprint ol li {
+    background-color: black;
+  }
+  
+  .panel.red .prettyprint .linenums > li:nth-child(n + 7):nth-child(-n + 9),
+  .panel.gray .prettyprint .linenums > li:nth-child(10),
+  .panel.purple .prettyprint .linenums > li:nth-child(4),
+  .panel.green .prettyprint .linenums > li:nth-child(n + 6):nth-child(-n + 10) {
+    background-color: #222;
+  }
+  
+  .box {
+    width: 70vw;
+    margin-right: 25vw;
+    height: 80vh;
+    text-align: center;
+    line-height: 80px;
+    background-color: white;
+    border-radius: 8px;
+    color: #222;
+    font-weight: 700;
+    margin-left: 20px;
+    will-change: transform;
+  }
+  .box.active {
+    background-color: orange;
+    border: 2px solid white;
+  }
+  .description,
+  .final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    min-height: 80vh;
   }
   
   .container {
-    height: 100vh;
+    width: 500%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    flex-wrap: nowrap;
   }
   
-  .scroll-container {
-    display: flex;
-    flex-direction: row;
-    width: 600%; /* Adjust this to ensure all items fit */
-    height: 100vh;
-    overflow-x: auto; /* Allow horizontal scroll */
-    overflow-y: hidden; /* Prevent vertical scroll */
-    scroll-snap-type: x mandatory; /* Snap to items */
+  .panel {
+    font-weight: 300;
   }
   
-  .scroll-item {
-    flex: 0 0 100vw; /* Each item takes full width of viewport */
-    height: 100vh; /* Full height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    background-color: lightblue;
-    border: 2px solid #333;
-    scroll-snap-align: start; /* Snap alignment */
-  }
-  
-  .scroll-indicator {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #333;
+  code {
+    padding: 0.1rem;
+    background: #fff;
+    color: #222;
     font-size: 1.5rem;
-    z-index: 10;
   }
+  
+  h1 code {
+    font-size: 1.7rem;
+  }
+  
