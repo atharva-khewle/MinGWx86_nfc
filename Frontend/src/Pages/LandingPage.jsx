@@ -76,14 +76,14 @@ const LandingPage = () => {
       <div className="final h-screen w-screen bg-[#0f2435] flex justify-center items-end ">
         <div className="h-[89%] w-[90%] border-x border-t border-gray-300 flex items-center justify-center   flex-col">
           <div className='w-full h-[13.5%] flex'>
-            <div className='h-full w-[80%] border-b border-gray-300 border-r'></div>
-            <div className='h-full w-[20%] flex items-center justify-center'>
+            <div className='h-full w-[70%] border-b border-gray-300 border-r'></div>
+            <div className='h-full w-[30%] flex items-center justify-center'>
               <div>
-                <span className='small-outlined-text'>AINT&nbsp;</span>
-                <span className='font-bold'>NO&nbsp;</span>
-                <span className='small-outlined-text'>FOE&nbsp;</span>
-                <span className='font-bold'>IN&nbsp;</span>
-                <span className='small-outlined-text'>SIGHT&nbsp;</span>
+                <span className=' text-2xl small-outlined-text'>AINT&nbsp;</span>
+                <span className=' text-2xl font-bold'>NO&nbsp;</span>
+                <span className=' text-2xl small-outlined-text'>FOE&nbsp;</span>
+                <span className=' text-2xl font-bold'>IN&nbsp;</span>
+                <span className=' text-2xl small-outlined-text'>SIGHT&nbsp;</span>
 
               </div>
               
@@ -108,6 +108,52 @@ const LandingPage = () => {
         </div>
 
       </div>
+
+      <div className="h-screen w-screen flex flex-col bg-[#adfdss] text-white">
+  {/* Header Section */}
+  <div className="w-full h-[35%] flex items-end justify-center">
+    <span className="font-bold text-[11rem]">Title Merch</span>
+  </div>
+
+  {/* Image and Catalog Section */}
+  <div className="w-full h-[35%] flex px-[1.1rem] justify-around items-center">
+    <div className="h-[90%] w-[20%] bg-pink-500 rounded-full overflow-hidden">
+      <img src="image1.jpg" alt="Model 1" className="h-full w-full object-cover rounded-full" />
+    </div>
+    <div className="h-[90%] w-[20%] bg-red-500 rounded-full overflow-hidden">
+      <img src="image2.jpg" alt="Model 2" className="h-full w-full object-cover rounded-full" />
+    </div>
+    <div className="h-[90%] w-[20%] bg-green-500 rounded-full flex flex-col items-center justify-center text-center overflow-hidden">
+      <i className="ri-arrow-right-up-line text-white text-2xl"></i>
+      <span className="text-white text-lg">See Catalog</span>
+    </div>
+    <div className="h-[90%] w-[20%] bg-blue-500 rounded-full overflow-hidden">
+      <img src="image3.jpg" alt="Model 3" className="h-full w-full object-cover rounded-full" />
+    </div>
+    <div className="h-[90%] w-[20%] bg-yellow-500 rounded-full overflow-hidden">
+      <img src="image4.jpg" alt="Model 4" className="h-full w-full object-cover rounded-full" />
+    </div>
+  </div>
+
+  {/* Description Section */}
+  <div className="w-full h-[30%] flex items-center justify-between px-[1.1rem] text-gray-300 text-sm">
+    <div className="w-[30%] p-4">
+      <p>Here you will find everything you need. Our collection is constantly expanding to suit your unique style.</p>
+    </div>
+    <div className="w-[30%] p-4">
+      <p>
+        The women's clothing in our new collection is both comfortable and stylish, ideal for both casual days and special
+        occasions, all at affordable prices.
+      </p>
+    </div>
+    <div className="w-[30%] p-4 flex items-center justify-center">
+      <button className="bg-transparent border-2 border-white px-6 py-2 rounded-full text-white hover:bg-white hover:text-black transition-all">
+        Explore New Collection
+      </button>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };
