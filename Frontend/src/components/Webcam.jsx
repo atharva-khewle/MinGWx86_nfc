@@ -1,38 +1,44 @@
+import React from "react";
+import JoinForm from "./JoinForm";
+import { useEffect } from "react";
 import {
-  IonContent,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonImg,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-} from "@ionic/react";
-import { camera } from "ionicons/icons";
-import { usePhotoGallery } from "../hooks/usePhotoGallery";
+  selectIsConnectedToRoom,
+  useHMSActions,
+  useHMSStore,
+} from "@100mslive/react-sdk";
+import Message from "./Message";
+import { Chat } from "./Chat/Chat";
+import Conference from "./Conference";
+import Footer from "./Footer";
+import Header from "./Header"; // Ensure you have imported Header
 
-const WebCam = () => {
-  const { photos, takePhoto } = usePhotoGallery();
+function WebCam() {
+  const isConnected = useHMSStore(selectIsConnectedToRoom);
+  const hmsActions = useHMSActions();
+
+  useEffect(() => {
+    window.onunload = () => {
+      if (isConnected) {
+        hmsActions.leave();
+      }
+    };
+  }, [hmsActions, isConnected]);
 
   return (
-    <IonContent>
-      <IonGrid>
-        <IonRow>
-          {photos.map((photo, index) => (
-            <IonCol size="6" key={photo.filepath}>
-              <IonImg src={photo.webviewPath} />
-            </IonCol>
-          ))}
-        </IonRow>
-      </IonGrid>
-
-      <IonFab vertical="bottom" horizontal="center" slot="fixed">
-        <IonFabButton onClick={takePhoto}>
-          <IonIcon icon={camera} />
-        </IonFabButton>
-      </IonFab>
-    </IonContent>
+    <>
+      <Header />
+      {isConnected ? (
+        <>
+          <Conference />
+          <Footer />
+          <Chat />
+        </>
+      ) : (
+        <JoinForm />
+      )}
+      <Message />
+    </>
   );
-};
+}
 
 export default WebCam;
