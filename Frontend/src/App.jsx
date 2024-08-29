@@ -12,7 +12,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/community" element={<LandingPage />} />
         <Route path="/games" element={<Games></Games>} />
         <Route path="/community" element={<CommunityForum></CommunityForum>} />
         <Route path="/tournaments" element={<Tournaments />} />
