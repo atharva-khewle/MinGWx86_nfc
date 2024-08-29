@@ -75,8 +75,8 @@ const LandingPage = () => {
 
       <div className="final h-screen w-screen bg-[#0f2435] flex justify-center items-end ">
         <div className=' h-[89%] w-[90%] border-x border-t border-gray-300 flex items-center justify-center'>
-          <span className='text-white text-9xl italic font-bold rsk mr-9'>PRIZE</span>
-          <span className='outlined-text text-9xl ml-9'>POOL</span>
+          <span className='text-white text-9xl italic font-bold rsk mr-[3rem]'>PRIZE</span>
+          <span className='outlined-text text-9xl ml-[3rem]'>POOL</span>
         </div>
       </div>
     </div>
