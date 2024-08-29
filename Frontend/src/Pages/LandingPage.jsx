@@ -1,33 +1,19 @@
-import React, { useEffect } from 'react';
-import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css'; // Import your CSS file here
 
-gsap.registerPlugin(ScrollTrigger);
+const tournaments = [
+  { id: 1, title: 'Chess Tournament', link: 'https://example.com/chess' },
+  { id: 2, title: 'Soccer Championship', link: 'https://example.com/soccer' },
+  { id: 3, title: 'Basketball League', link: 'https://example.com/basketball' },
+  { id: 4, title: 'Tennis Open', link: 'https://example.com/tennis' },
+  { id: 5, title: 'eSports Tournament', link: 'https://example.com/esports' },
+  { id: 6, title: 'eSports Tournament', link: 'https://example.com/esports' },
+];
 
 const LandingPage = () => {
-  const navigate = useNavigate(); 
-
-  useEffect(() => {
-    const sections = gsap.utils.toArray('.panel');
-
-    const scrollTween = gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.container',
-        pin: true,
-        scrub: 0.1,
-        end: '+=3000'
-      }
-    });
-
-    gsap.set('.box', { y: 0 });
-    ScrollTrigger.defaults({ markers: { startColor: 'white', endColor: 'white' } });
-
-    return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  }, []);
+  const navigate = useNavigate();
 
   const handleCatalogClick = () => {
     navigate('/merch'); // Navigate to /merch route
@@ -35,6 +21,14 @@ const LandingPage = () => {
 
   const handleCommunityClick = () => {
     navigate('/community'); // Navigate to /community route
+  };
+
+  const handleTournamentsClick = () => {
+    navigate('/tournaments'); // Navigate to /tournaments route
+  };
+
+  const handleRedirect = (link) => {
+    window.open(link, "_blank");
   };
 
   return (
@@ -45,26 +39,32 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="container bg-red-300">
-        <section className="panel  m-2 blue">
-          <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-1" className="box-1 box" />
-        </section>
-
-        <section className="panel m-2 blue">
-          <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-1" className="box-1 box" />
-        </section>
-        
-        <section className="panel m-2 blue">
-          <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-2" className="box-2 box" />
-        </section>
-
-        <section className="panel m-2 blue">
-          <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-3" className="box-3 box" />
-        </section>
-
-        <section className="panel m-2 blue">
-          <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-4" className="box-4 box" />
-        </section>
+      <div className='h-screen w-screen bg-orange-100 photo-dalo'>
+        <div className=" max-w-[100vw] min-h-[100vh] photo-dalo flex flex-col items-center justify-start p-8">
+          <div className="w-[80%] flex flex-col items-center justify-center mb-8">
+            <div className="text-[2.8rem] text-white mb-4 text-center font-extrabold">
+              MATCH IN GAMES
+            </div>
+          </div>
+          <div className=" flex items-start justify-center h-[70vh] pt-2 scroll-smooth scrollbar-hide overflow-auto">
+            <div className="grid grid-cols-3 w-[80%] p-4 gap-4">
+              {tournaments.map((tournament) => (
+                <motion.div
+                  key={tournament.id}
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "easeIn" }}
+                  className="tournament-card cursor-pointer bg-cover bg-red-200 bg-center rounded-lg shadow-md flex items-center justify-center"
+                  onClick={() => handleRedirect(tournament.link)}
+                >
+                  <span className="text-black text-2xl text-center p-2 font-bold shadow-text">
+                    {tournament.title}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="final h-screen w-screen bg-[#172330] flex justify-center items-end ">
@@ -91,8 +91,16 @@ const LandingPage = () => {
               <span className="text-[#ff4554] text-[10rem] italic font-bold letter-spacing-tight mr-[5rem]">PRIZE</span>
               <span className="outlined-text text-[10rem] letter-spacing-tight ml-[5rem]">POOL</span>
             </div>
-            <div className='h-full w-full flex items-center justify-center'>
-              DANCE FOR ME DANCE FOR ME OOOH
+            <div className="h-full w-full flex flex-col items-center justify-center">
+              <button
+                onClick={handleTournamentsClick}
+                className="mb-8 px-8 py-4 bg-[#ff4554] text-black rounded-full text-2xl font-bold hover:bg-[#ff6670] transition-colors"
+              >
+                Explore Tournaments
+              </button>
+              <div className="text-2xl font-bold">
+                DANCE FOR ME DANCE FOR ME OOOH
+              </div>
             </div>
           </div>
         </div>
@@ -118,7 +126,7 @@ const LandingPage = () => {
             <span className="text-white text-lg">See Catalog</span>
           </div>
           <div className="h-[90%] w-[20%] bg-blue-500 rounded-full overflow-hidden">
-            <img src="image3.jpg" alt="Model 3" className="h-full w-full object-cover rounded-full" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/girPqIJ_bg_removed.png?alt=media&token=31d22452-bb0f-49c2-8b86-13ee21b12971" alt="Model 3" className="h-[120%] w-full object-contain rounded-full" />
           </div>
           <div className="h-[90%] w-[20%] bg-yellow-500 rounded-full overflow-hidden">
             <img src="image4.jpg" alt="Model 4" className="h-full w-full object-cover rounded-full" />

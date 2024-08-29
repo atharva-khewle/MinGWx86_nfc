@@ -128,3 +128,9 @@ body {
     font-size: 1.7rem;
   }
   
+
+  .photo-dalo{
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/valobggames.jpg?alt=media&token=8b8b5f65-de6a-44a4-9258-b5d2d0b9bbcc');
+    background-size: contain  ; /* Adjust to your desired size */
+    background-position: center; 
+  }
