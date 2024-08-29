@@ -1,0 +1,48 @@
+/* LandingPage.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-y: hidden; /* Prevent vertical scroll */
+  }
+  
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .scroll-container {
+    display: flex;
+    flex-direction: row;
+    width: 600%; /* Adjust this to ensure all items fit */
+    height: 100vh;
+    overflow-x: auto; /* Allow horizontal scroll */
+    overflow-y: hidden; /* Prevent vertical scroll */
+    scroll-snap-type: x mandatory; /* Snap to items */
+  }
+  
+  .scroll-item {
+    flex: 0 0 100vw; /* Each item takes full width of viewport */
+    height: 100vh; /* Full height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background-color: lightblue;
+    border: 2px solid #333;
+    scroll-snap-align: start; /* Snap alignment */
+  }
+  
+  .scroll-indicator {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #333;
+    font-size: 1.5rem;
+    z-index: 10;
+  }
