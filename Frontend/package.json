@@ -47,6 +47,6 @@
     "vite": "^5.4.1"
   },
   "overrides": {
-    "@tldraw/state": "1.0.0"
+    "@tldraw/state": "2.0.0"
   }
 }
