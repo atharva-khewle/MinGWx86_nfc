@@ -20,7 +20,7 @@ const LandingPage = () => {
       }
     });
 
-    gsap.set('.box', { y: 100 });
+    gsap.set('.box', { y: 0 });
     ScrollTrigger.defaults({ markers: { startColor: 'white', endColor: 'white' } });
 
     // Apply animation to each panel
@@ -44,48 +44,39 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div>
-      <div className="description">
-        <div>
-          <h1>Horizontal "<code>containerAnimation</code>"</h1>
-          <p>
-            Scroll this page vertically and you'll see a horizontal fake-scrolling section where a container is animated on the x-axis using a ScrollTrigger animation. With <code>containerAnimation</code> you can trigger animations when certain elements <i>inside</i> that container enter the viewport horizontally! It's like a ScrollTrigger inside of a ScrollTrigger. 🤯
-          </p>
-        </div>
-        <div className="scroll-down">
-          Scroll down
-          <div className="arrow"></div>
+    <div className='h-[100vh] w-[100vw] bg-yellow-300'>
+      <div className="description h-full w-full flex items-center justify-center p-[10px]">
+        <div className='text-8xl text-white font-black'>
+          PROJECT TITLE
         </div>
       </div>
 
-      <div className="container">
-        <section className="panel blue">
-          <img src="https://picsum.photos/200/300" alt="box-1" className="box-1 box" />
+      <div className="container bg-red-300">
+        <section className="panel  m-2 blue">
+          <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-1" className="box-1 box" />
+        </section>
+
+        <section className="panel m-2 blue">
+          <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-1" className="box-1 box" />
         </section>
         
-        <section className="panel blue">
-          <img src="https://picsum.photos/200/300" alt="box-2" className="box-2 box" />
+        <section className="panel m-2 blue">
+          <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-2" className="box-2 box" />
         </section>
 
-        <section className="panel blue">
-          <img src="https://picsum.photos/200/300" alt="box-3" className="box-3 box" />
+        <section className="panel m-2 blue">
+          <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-3" className="box-3 box" />
         </section>
 
-        <section className="panel blue">
-          <img src="https://picsum.photos/200/300" alt="box-4" className="box-4 box" />
+        <section className="panel m-2 blue">
+          <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-4" className="box-4 box" />
         </section>
       </div>
 
-      <div className="final">
-        <div>
-          <h1>Wasn't that fun?</h1>
-          <p>Here are a few caveats to keep in mind:</p>
-          <ul>
-            <li>The fake-scrolling animation (just the part that's moving the container horizontally) must have no easing (<code>ease: "none"</code>).</li>
-            <li>Pinning and snapping won't work on ScrollTriggers with a <code>containerAnimation</code>.</li>
-            <li>The mapping of scroll position trigger points are based on the trigger element itself not being animated horizontally (inside the container). If you need to animate the trigger, you can either wrap it in a &lt;div&gt; and use that as the trigger instead or just factor the trigger's movement into your end position. For example, if you animate it left 100px, make the <code>end</code> 100px further to the left.</li>
-            <li>Requires ScrollTrigger 3.8.0 or later</li>
-          </ul>
+      <div className="final h-screen w-screen bg-[#0f2435] flex justify-center items-end ">
+        <div className=' h-[89%] w-[90%] border-x border-t border-gray-300 flex items-center justify-center'>
+          <span className='text-white text-9xl italic font-bold rsk mr-[3rem]'>PRIZE</span>
+          <span className='outlined-text text-9xl ml-[3rem]'>POOL</span>
         </div>
       </div>
     </div>

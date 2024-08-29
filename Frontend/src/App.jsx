@@ -20,13 +20,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/games" element={<Games />} />
-        <Route path="/tournaments" element={<Tournaments />} />
-        <Route path="/merch" element={<Merch />} />
-        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/community" element={<CommunityForum />} />
-        <Route path="/meet" element={<WebCam />} />
-        <Route path="/camera" element={<CameraCapture />} />
       </Routes>
     </Router>
   );
