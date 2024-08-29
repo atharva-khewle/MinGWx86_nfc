@@ -7,6 +7,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/community" element={<LandingPage />} />
       </Routes>
     </Router>
   );
