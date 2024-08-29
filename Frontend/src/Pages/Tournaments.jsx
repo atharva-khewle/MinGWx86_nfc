@@ -16,29 +16,26 @@ export const Tournaments = () => {
     const testFetchTournaments = async () => {
       try {
         const response = await axios.post("http://localhost:3456/tournaments", {
-          query: query,
+          query: "chess",
         });
-        console.log("Response data:", response.data.organic_results);
         setTournaments(response.data.organic_results);
       } catch (error) {
         console.error("Error:", error);
       }
     };
 
-    // Call the function to test
     testFetchTournaments();
   };
-
   const handleRedirect = (link) => {
     window.open(link, "_blank");
   };
 
   return (
     <>
-      <div className="background-tournaments bg-red-200 max-w-[100vw] min-h-[100vh]">
+      <div className="background-tournaments relative bg-red-200 max-w-[100vw] min-h-[100vh]">
         <div className="parallax">hjgfyhjsgjh</div>
         <div className="semicircle"></div>
-        Tournaments
+        <h1 className="absolute top-0 "> Tournaments</h1>
       </div>
       <div className="tournament-section max-w-[100vw] min-h-[100vh] bg-[#121c26] flex flex-col items-center justify-start p-8">
         <div className="w-[80%] flex flex-col items-center justify-center mb-8">
