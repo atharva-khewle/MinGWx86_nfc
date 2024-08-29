@@ -15,6 +15,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/cameracapture" element={<CameraCapture />} />
         <Route path="/community" element={<CommunityForum />} />
       </Routes>
     </Router>
