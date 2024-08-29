@@ -59,9 +59,15 @@ body {
   }
 
 .description{
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/gta6.jpg?alt=media&token=69278cf1-83f4-40fe-a93b-4937c8a0d8ea');
+  background-image: url('');
   background-size: cover; /* Adjust to your desired size */
   background-position: center; 
+}
+
+.add-bg-community{
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/VALORANT_phx_jett_2.jpg?alt=media&token=e57de277-a388-424e-9c73-f31e5f173371');
+  background-size: contain;
+  background-position: center;
 }
 
 .rsk{
@@ -72,7 +78,16 @@ body {
   font-family: 'Roskilde', sans-serif;
   font-style: italic;
   color: transparent;
-  -webkit-text-stroke: 1px white; /* Width and color of the outline */
+  -webkit-text-stroke: 1px #ff4554; /* Width and color of the outline */
+  text-transform: uppercase; /* To ensure the text is capitalized */
+  font-weight: bold;
+}
+
+.outlined-text-community {
+  font-family: 'Roskilde', sans-serif;
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1px #ff4554; /* Width and color of the outline */
   text-transform: uppercase; /* To ensure the text is capitalized */
   font-weight: bold;
 }

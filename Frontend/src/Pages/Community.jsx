@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 function CommunityForum() {
   const [forums, setForums] = useState([
-    { name: 'IFB001 Basis Data', id: 1 },
-    { name: 'IFB012 Pemrograman Berorientasi Objek', id: 2 }
+    { name: 'Valorant Chats', id: 1, createdAt: 'Dec 12, 2023 - 09:00 WIB', createdBy: 'John Doe' },
+    { name: 'PUBG Pros', id: 2, createdAt: 'Dec 13, 2023 - 10:00 WIB', createdBy: 'Jane Smith' },
   ]);
   const [showPopup, setShowPopup] = useState(false);
   const [newForumName, setNewForumName] = useState('');
@@ -13,8 +13,15 @@ function CommunityForum() {
       {
         id: 1,
         user: 'Rini Nirmala, M.Klin',
-        messages: ['Ini kok gini gimana ???', 'Ini kok gini gimana ???'],
+        messages: ['Why is it like this???', 'Why is it like this???'],
         profileImage: 'https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fkashish.JPG?alt=media&token=3e71f52b-b06f-4e65-89ba-d49569fd76d3'
+      },
+      {
+        id: 2,
+        user: 'John Doe',
+        messages: ['Guys! I won the first place in Jett Comp Tourney.'],
+        profileImage: 'https://via.placeholder.com/150',
+        image: 'https://via.placeholder.com/400x200', // Static image for this post
       }
     ],
     2: []
@@ -28,7 +35,7 @@ function CommunityForum() {
   const handleDoneClick = () => {
     if (newForumName.trim()) {
       const newId = forums.length + 1;
-      setForums([...forums, { name: newForumName, id: newId }]);
+      setForums([...forums, { name: newForumName, id: newId, createdAt: new Date().toLocaleString(), createdBy: 'Current User' }]);
       setComments({ ...comments, [newId]: [] });
       setNewForumName('');
     }
@@ -87,11 +94,44 @@ function CommunityForum() {
     }
   };
 
+  const selectedForum = forums.find(f => f.id === selectedForumId);
+
   return (
-    <div className="flex h-screen w-full bg-gray-100">
+    <div className="flex h-screen w-full bg-white p-2">
       {/* Sidebar */}
-      <aside className="w-64 bg-blue-200 h-full border-r flex flex-col">
-        <div className="p-4 border-b h-[20%]">
+      <aside className="w-64 h-full  flex flex-col">
+        <div className="h-[20%]"> name and logo of app</div> {/* Empty space in sidebar */}
+        <div className="h-[80%] border-r  flex flex-col">
+          {forums.map((forum) => (
+            <div
+              key={forum.id}
+              onClick={() => handleForumClick(forum.id)}
+              className={`bg-gray-100 h-[15%] flex items-center justify-between px-4 py-2 cursor-pointer ${
+                selectedForumId === forum.id ? 'bg-gray-300' : ''
+              }`}
+            >
+              <div>
+                <h3 className="font-semibold text-black">{forum.name}</h3>
+                <p className="text-sm text-gray-600">{forum.createdBy}</p>
+              </div>
+              <i className="ri-arrow-down-s-line"></i>
+            </div>
+          ))}
+        </div>
+      </aside>
+
+      {/* Main Content */}
+      <main className="flex-1 flex flex-col h-full">
+        {/* Forum Header */}
+        <header className="p-4 border border-gray-400 h-[20%] rounded-2xl flex justify-between items-center">
+          <div>
+            <h1 className="text-xl text-black font-bold">{selectedForum.name}</h1>
+            <p className='text-gray-700'>Created by: {selectedForum.createdBy}</p>
+            <div className="text-sm text-gray-700">
+              <span>{selectedForum.createdAt}</span>
+            </div>
+          </div>
+          {/* Create Button in Header */}
           <a
             href="#_"
             onClick={handleCreateClick}
@@ -103,45 +143,13 @@ function CommunityForum() {
             </span>
             <span className="relative text-black group-hover:text-white ml-2">+</span>
           </a>
-        </div>
-        <div className="h-[80%] bg-red-200 flex flex-col">
-          {forums.map((forum) => (
-            <div
-              key={forum.id}
-              onClick={() => handleForumClick(forum.id)}
-              className={`bg-gray-300 h-[15%] flex items-center justify-between px-4 py-2 cursor-pointer ${
-                selectedForumId === forum.id ? 'bg-gray-400' : ''
-              }`}
-            >
-              <div>
-                <h3 className="font-semibold text-black">{forum.name}</h3>
-                <p className="text-sm text-gray-600">01 Reguler</p>
-              </div>
-              <i className="ri-arrow-down-s-line"></i>
-            </div>
-          ))}
-        </div>
-      </aside>
-
-      {/* Main Content */}
-      <main className="flex-1 flex flex-col h-full">
-        {/* Forum Header */}
-        <header className="p-4 border-b h-[20%] bg-pink-300">
-          <h1 className="text-xl font-bold">{forums.find(f => f.id === selectedForumId).name}</h1>
-          <p>IFB012 Pemrograman Berorientasi Objek</p>
-          <div className="text-sm text-gray-500">
-            <span>12 Des 2023 - 09:00 WIB</span> to <span>20 Des 2023 - 09:00 WIB</span>
-          </div>
-          <div className="mt-2 p-2 bg-yellow-100 text-yellow-700 text-sm rounded">
-            Sebagai syarat kehadiran, Anda diwajibkan menuliskan komentar sebanyak 3 kali sebelum forum berakhir
-          </div>
         </header>
 
         {/* Comments Section */}
-        <div className="h-[80%] w-full overflow-y-auto bg-pink-100">
+        <div className="h-[80%] w-full overflow-y-auto ">
           {comments[selectedForumId].map((comment) => (
-            <div key={comment.id} className="bg-green-100 p-4 w-full">
-              <div className="flex items-start space-x-4">
+            <div key={comment.id} className=" p-2 pb-4 w-full border-b ">
+              <div className="flex items-start space-x-4 p-2 ">
                 {/* Profile Image */}
                 <div className="w-12 h-12 rounded-full overflow-hidden">
                   <img
@@ -152,11 +160,19 @@ function CommunityForum() {
                 </div>
 
                 {/* Message Content */}
-                <div>
+                <div className=''>
                   <span className="font-semibold text-blue-500">{comment.user}</span>
                   {comment.messages.map((message, index) => (
-                    <p key={index} className="mt-1">{message}</p>
+                    <p key={index} className="mt-1 text-black">{message}</p>
                   ))}
+                  {/* Display image if available */}
+                  {comment.image && (
+                    <img
+                      src={comment.image}
+                      alt="Comment visual"
+                      className="mt-2 rounded-lg"
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -164,15 +180,21 @@ function CommunityForum() {
         </div>
 
         {/* Comment Input */}
-        <div className="p-4 border-t bg-white">
+        <div className="p-4 border-t bg-white flex items-center space-x-2">
           <input
             type="text"
-            placeholder="Tulis komentar..."
+            placeholder="Write a comment..."
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             onKeyDown={handleInputKeyDown}
-            className="w-full p-2 border rounded"
+            className="flex-1 p-2 border rounded text-black"
           />
+          <button
+            onClick={handleSendMessage}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Send
+          </button>
         </div>
       </main>
 
@@ -180,19 +202,19 @@ function CommunityForum() {
       {showPopup && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded shadow-lg w-96">
-            <h2 className="text-xl font-semibold mb-4">Create New Forum</h2>
+            <h2 className="text-xl font-semibold mb-4 text-black">Create New Forum</h2>
             <input
               type="text"
               placeholder="Forum Name"
               value={newForumName}
               onChange={(e) => setNewForumName(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="w-full p-2 border rounded mb-4"
+              className="w-full p-2 border rounded mb-4 text-black"
             />
             <div className="flex justify-end space-x-4">
               <button
                 onClick={handleCancelClick}
-                className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 text-black"
               >
                 Cancel
               </button>
