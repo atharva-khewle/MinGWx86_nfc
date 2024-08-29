@@ -46,7 +46,7 @@ const LandingPage = () => {
       </div>
 
       <div className="container bg-red-300">
-        <section className="panel m-2 blue">
+        <section className="panel  m-2 blue">
           <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-1" className="box-1 box" />
         </section>
 
