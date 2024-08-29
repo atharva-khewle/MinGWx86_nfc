@@ -10,15 +10,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@100mslive/react-icons": "^0.10.18",
+    "@100mslive/react-sdk": "^0.10.18",
+    "@100mslive/roomkit-react": "^0.3.18",
     "@capacitor/camera": "^6.0.2",
     "@capacitor/cli": "^6.1.2",
     "@capacitor/core": "^6.1.2",
     "@capacitor/filesystem": "^6.0.1",
     "@capacitor/preferences": "^6.0.2",
     "@ionic/react": "^8.2.7",
+    "@videosdk.live/react-sdk": "^0.1.98",
+    "axios": "^1.7.5",
     "gsap": "^3.12.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-player": "^2.16.0",
     "react-router-dom": "^6.26.1",
     "remixicon": "^4.3.0"
   },
