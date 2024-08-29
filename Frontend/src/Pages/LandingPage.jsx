@@ -74,10 +74,39 @@ const LandingPage = () => {
       </div>
 
       <div className="final h-screen w-screen bg-[#0f2435] flex justify-center items-end ">
-        <div className=' h-[89%] w-[90%] border-x border-t border-gray-300 flex items-center justify-center'>
-          <span className='text-white text-9xl italic font-bold rsk mr-[3rem]'>PRIZE</span>
-          <span className='outlined-text text-9xl ml-[3rem]'>POOL</span>
+        <div className="h-[89%] w-[90%] border-x border-t border-gray-300 flex items-center justify-center   flex-col">
+          <div className='w-full h-[13.5%] flex'>
+            <div className='h-full w-[80%] border-b border-gray-300 border-r'></div>
+            <div className='h-full w-[20%] flex items-center justify-center'>
+              <div>
+                <span className='small-outlined-text'>AINT&nbsp;</span>
+                <span className='font-bold'>NO&nbsp;</span>
+                <span className='small-outlined-text'>FOE&nbsp;</span>
+                <span className='font-bold'>IN&nbsp;</span>
+                <span className='small-outlined-text'>SIGHT&nbsp;</span>
+
+              </div>
+              
+
+            </div>
+          </div>
+          <div className='w-full h-[86.5%] relative  flex flex-col items-center justify-start '>
+            <div className="relative flex items-start justify-center mt-[3rem] ">
+              <img 
+                src="https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/pngwing.com%20(1).png?alt=media&token=36399fce-5267-4c53-9ec5-f57275cb677d" 
+                alt="" 
+                className="absolute inset-0 h-[48vh] top-[-10%] left-[26%] object-contain z-10"
+              />
+
+              <span className="text-white text-[10rem] italic font-bold letter-spacing-tight mr-[5rem] ">PRIZE</span>
+              <span className="outlined-text text-[10rem] letter-spacing-tight ml-[5rem] ">POOL</span>
+            </div>
+            <div className=' h-full w-full flex items-center justify-center'>
+              DANCE FOR ME DANCE FOR ME OOOH
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   );

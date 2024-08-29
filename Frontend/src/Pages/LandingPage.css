@@ -72,7 +72,20 @@ body {
   text-transform: uppercase; /* To ensure the text is capitalized */
   font-weight: bold;
 }
-  
+
+
+.small-outlined-text {
+  font-family: 'Roskilde', sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 0.5px white; /* Width and color of the outline */
+  text-transform: uppercase; /* To ensure the text is capitalized */
+}
+
+
+.custom-line-height {
+  line-height: 10px; /* Adjust this value as needed */
+}
+
   
   .container {
     width: 500%;
