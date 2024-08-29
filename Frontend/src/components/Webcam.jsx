@@ -11,6 +11,7 @@ import { Chat } from "./Chat/Chat";
 import Conference from "./Conference";
 import Footer from "./Footer";
 import Header from "./Header"; // Ensure you have imported Header
+import ChatRoom from "./Chat/Chat2";
 
 function WebCam() {
   const isConnected = useHMSStore(selectIsConnectedToRoom);
@@ -29,9 +30,13 @@ function WebCam() {
       <Header />
       {isConnected ? (
         <>
+
+          <div className="bablu flex flex-row">
           <Conference />
+          </div>
           <Footer />
           <Chat />
+          <ChatRoom/>
         </>
       ) : (
         <JoinForm />

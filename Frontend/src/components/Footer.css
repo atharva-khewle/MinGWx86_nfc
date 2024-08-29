@@ -1,0 +1,45 @@
+.control-bar {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0; /* Removes gaps between buttons */
+  }
+  .middles{
+    display: flex;
+    justify-content: center;
+  }
+  .btn-control {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-grow: 1; /* Make buttons grow evenly */
+    border-radius: 0; /* Removes border radius to make buttons seamless */
+  }
+  
+  .btn-control:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .btn-control:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .btn-control:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  

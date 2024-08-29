@@ -8,7 +8,7 @@ function Conference() {
     <div className="conference-section">
       <h2>Conference</h2>
 
-      <div className="peers-container">
+      <div className="peers-container flex felx-row">
         {peers.map((peer) => (
           <Peer key={peer.id} peer={peer} />
         ))}
