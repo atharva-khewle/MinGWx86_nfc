@@ -6,9 +6,8 @@ function Conference() {
   const peers = useHMSStore(selectPeers);
   return (
     <div className="conference-section">
-      <h2>Conference</h2>
 
-      <div className="peers-container flex felx-row">
+      <div className="peers-container flex felx-row justify-around">
         {peers.map((peer) => (
           <Peer key={peer.id} peer={peer} />
         ))}

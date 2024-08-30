@@ -5,6 +5,9 @@
   font-family: "Lufga", sans-serif;
 }
 
+
+
+
 body {
   background-color: #222;
   color: #ddd;
@@ -57,7 +60,12 @@ h2 {
 }
 
 .description {
-  background-image: url("");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/gta6.jpg?alt=media&token=69278cf1-83f4-40fe-a93b-4937c8a0d8eax");
+  background-size: cover; /* Adjust to your desired size */
+  background-position: center;
+}
+.matchingames {
+  background-image: url("https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2024/04/Arena-Breakout-Infinite_Beta_KV_EN.jpg");
   background-size: cover; /* Adjust to your desired size */
   background-position: center;
 }
@@ -67,7 +75,12 @@ h2 {
   background-size: contain;
   background-position: center;
 }
-
+.tournament-card{
+  background-color: black;
+  color: white;
+  opacity: 70;
+  backdrop-filter: blur(9910px);
+}
 .rsk {
   font-family: "Roskilde", sans-serif;
 }
@@ -96,9 +109,18 @@ h2 {
   -webkit-text-stroke: 0.5px white; /* Width and color of the outline */
   text-transform: uppercase; /* To ensure the text is capitalized */
 }
+.snap-container {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+
 
 .custom-line-height {
-  line-height: 10px; /* Adjust this value as needed */
+  line-height: 10px; 
 }
 
 .container {

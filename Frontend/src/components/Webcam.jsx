@@ -12,6 +12,7 @@ import Conference from "./Conference";
 import Footer from "./Footer";
 import Header from "./Header"; // Ensure you have imported Header
 import ChatRoom from "./Chat/Chat2";
+import "./Webcam.css"
 
 function WebCam() {
   const isConnected = useHMSStore(selectIsConnectedToRoom);
@@ -27,16 +28,29 @@ function WebCam() {
 
   return (
     <>
-      <Header />
       {isConnected ? (
         <>
+        <div className="meetuipage flex flex-row bg-gray-900">
 
-          <div className="bablu flex flex-row">
-          <Conference />
-          </div>
-          <Footer />
-          <Chat />
-          <ChatRoom/>
+        <div className="meetuipage flex flex-row">
+    <div className="bablu flex flex-col">
+        <Conference />
+        <div class="linkdiv">
+    <button class="play-now-btn" onclick="window.open('https://smashkarts.io/', '_blank')">
+        Play Now
+    </button>
+</div>
+
+
+        <Footer />
+    </div>
+    
+    <div className="chat3 bg-gray-950">
+        lmaooooooooo
+    </div>
+</div>
+        </div>
+
         </>
       ) : (
         <JoinForm />
