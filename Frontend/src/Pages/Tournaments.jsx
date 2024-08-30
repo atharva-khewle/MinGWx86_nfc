@@ -8,34 +8,33 @@ export const Tournaments = () => {
   const [tournaments, setTournaments] = useState([]);
 
   useEffect(() => {
-    console.log("Fetching tournaments with query:", searchQuery);
     fetchTournaments(searchQuery);
   }, [searchQuery]);
 
   const fetchTournaments = async (query) => {
-    const testFetchTournaments = async () => {
-      try {
-        const response = await axios.post("http://localhost:3456/tournaments", {
-          query: "chess",
-        });
-        setTournaments(response.data.organic_results);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-
-    testFetchTournaments();
+    try {
+      const response = await axios.post("http://localhost:3456/tournaments", {
+        query: "chess",
+      });
+      setTournaments(response.data.organic_results);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
+
   const handleRedirect = (link) => {
     window.open(link, "_blank");
   };
 
   return (
     <>
-      <div className="background-tournaments relative bg-red-200 max-w-[100vw] min-h-[100vh]">
-        <div className="parallax">hjgfyhjsgjh</div>
-        <div className="semicircle"></div>
-        <h1 className="absolute top-0 "> Tournaments</h1>
+      <div className="background-tournaments relative flex items-center justify-center min-w-[100vw] min-h-[100vh]">
+        <div className="relative min-w-[100vw] min-h-[100vh] flex items-center justify-center">
+          <div className="absolute inset-0 bg-[#1d2e3d] opacity-50"></div>
+          <h1 className="font-bold text-white text-[8.8rem] pb-[6%] relative">
+            TOUR<span className="outlined-text">NAM</span>ENTS
+          </h1>
+        </div>
       </div>
       <div className="tournament-section max-w-[100vw] min-h-[100vh] bg-[#121c26] flex flex-col items-center justify-start p-8">
         <div className="w-[80%] flex flex-col items-center justify-center mb-8">
@@ -58,8 +57,8 @@ export const Tournaments = () => {
             </button>
           </div>
         </div>
-        <div className=" flex items-start justify-center h-[70vh] pt-2 scroll-smooth scrollbar-hide overflow-auto">
-          <div className="grid grid-cols-3 w-[80%] p-4 gap-4  ">
+        <div className="flex items-start justify-center h-[70vh] pt-2 scroll-smooth overflow-auto">
+          <div className="grid grid-cols-3 w-[80%] p-4 gap-4">
             {tournaments.length > 0 ? (
               tournaments.map((tournament) => (
                 <motion.div
@@ -67,23 +66,18 @@ export const Tournaments = () => {
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "easeIn" }}
-                  className="tournament-card cursor-pointer bg-cover bg-red-200 bg-center rounded-lg shadow-md flex items-center justify-center"
-                  // style={{
-                  //   backgroundImage: `url('https://example.com/4k-image.png')`, // Replace with actual 4K PNG URL
-                  // }}
+                  className="tournament-card cursor-pointer bg-cover bg-center rounded-lg shadow-md flex items-center justify-center"
                   onClick={() => handleRedirect(tournament.link)}
                 >
-                  {/* <div className="overlay"> */}
                   <span className="text-black text-2xl text-center p-2 font-bold shadow-text">
                     {tournament.title}
                   </span>
-                  {/* </div> */}
                 </motion.div>
               ))
             ) : (
               <div className="text-white text-lg">No tournaments found</div>
             )}
-          </div>{" "}
+          </div>
         </div>
       </div>
     </>
