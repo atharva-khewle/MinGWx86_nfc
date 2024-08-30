@@ -121,7 +121,7 @@ const CameraCapture = () => {
         setLoading(false);
         setSuccess(true);
         setTimeout(() => {
-          navigate('/meet');
+          navigate('/matchingalgo');
         }, 2000); // Wait 2 seconds before navigating
       } else {
         setLoading(false);

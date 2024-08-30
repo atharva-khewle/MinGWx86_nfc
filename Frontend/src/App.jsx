@@ -14,6 +14,7 @@ import {
   selectIsConnectedToRoom,
   HMSRoomProvider,
 } from "@100mslive/react-sdk"; // Import HMSRoomProvider
+import MatchComponent from "./components/MatchComponent.jsx";
 // import dotenv from "dotenv";
 // dotenv.config();
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/tournaments" element={<Tournaments />} />
         <Route path="/meet" element={<WebCam />} />
         <Route path="/merch" element={<Merch />} />
+        <Route path="/matchingalgo" element={<MatchComponent />} />
       </Routes>
     </Router>
   );

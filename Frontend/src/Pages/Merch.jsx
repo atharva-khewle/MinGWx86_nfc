@@ -8,7 +8,7 @@ const Merch = () => {
   const products = [
     {
       id: 1,
-      name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      name: "Custom Printed Bagpack",
       price: 109.95,
       image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       description:
@@ -17,7 +17,7 @@ const Merch = () => {
     },
     {
       id: 2,
-      name: "Mens Casual Premium Slim Fit T-Shirts",
+      name: "Casual Custom Printed T-Shirts",
       price: 22.3,
       image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
       description:
@@ -26,7 +26,7 @@ const Merch = () => {
     },
     {
       id: 3,
-      name: "Mens Cotton Jacket",
+      name: "Custom Cotton Jacket",
       price: 55.99,
       image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
       description:
@@ -35,7 +35,7 @@ const Merch = () => {
     },
     {
       id: 4,
-      name: "Women's T-shirt",
+      name: "Custom Women's Trench Coat",
       price: 19.99,
       image: "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
       description: "Comfortable and stylish women's T-shirt for everyday use...",
@@ -43,7 +43,7 @@ const Merch = () => {
     },
     {
       id: 5,
-      name: "Women's Casual Dress",
+      name: "Women's Custom Text Dress",
       price: 29.99,
       image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
       description: "Lightweight and comfortable casual dress perfect for daily wear...",
@@ -51,26 +51,26 @@ const Merch = () => {
     },
     {
       id: 6,
-      name: "Leather Handbag",
+      name: "Leather Handbag with Custom Wallet",
       price: 49.99,
-      image: "https://fakestoreapi.com/img/71Qsl5I3uKL._AC_UX679_.jpg",
+      image: "https://www.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=med-s3/yP-mplace/Bags/Hand_Bags/YPB0855F8174_o.jpg&resizeTo=600",
       description: "Stylish leather handbag, great for work or a casual outing...",
       category: "Women",
     },
     {
       id: 7,
-      name: "Mens Running Shoes",
+      name: "Title Running Shoes",
       price: 89.99,
-      image: "https://fakestoreapi.com/img/71AOM8z5BVL._AC_UX679_.jpg",
+      image: "https://i.etsystatic.com/15476185/r/il/d9efaf/1564863134/il_1588xN.1564863134_3p5l.jpg",
       description:
         "Comfortable and durable running shoes, perfect for outdoor and indoor activities...",
       category: "Men",
     },
     {
       id: 8,
-      name: "Women's Running Shoes",
+      name: "Title Running Shoes",
       price: 85.99,
-      image: "https://fakestoreapi.com/img/71Kb8v8EG3L._AC_UX679_.jpg",
+      image: "https://i.etsystatic.com/15476185/r/il/d9efaf/1564863134/il_1588xN.1564863134_3p5l.jpg",
       description: "Lightweight and stylish running shoes designed for maximum comfort...",
       category: "Women",
     },
