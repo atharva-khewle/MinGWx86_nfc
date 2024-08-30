@@ -32,21 +32,21 @@ const LandingPage = () => {
   };
 
   return (
-    <div className='h-[100vh] w-[100vw] bg-yellow-300'>
-      <div className="description h-full w-full flex items-center justify-center p-[10px]">
+    <div className=' snap-container h-[100vh] w-[100vw] overflow-y-scroll'>
+      <div className="snap-start description h-screen w-screen bg-yellow-300 flex items-center justify-center p-10">
         <div className='text-8xl text-white font-black'>
           PROJECT TITLE
         </div>
       </div>
 
-      <div className='h-screen w-screen bg-orange-100 photo-dalo'>
-        <div className=" max-w-[100vw] min-h-[100vh] photo-dalo flex flex-col items-center justify-start p-8">
+      <div className='snap-start h-screen w-screen bg-orange-100'>
+        <div className="flex flex-col items-center justify-start p-8 min-h-full">
           <div className="w-[80%] flex flex-col items-center justify-center mb-8">
             <div className="text-[2.8rem] text-white mb-4 text-center font-extrabold">
               MATCH IN GAMES
             </div>
           </div>
-          <div className=" flex items-start justify-center h-[70vh] pt-2 scroll-smooth scrollbar-hide overflow-auto">
+          <div className="flex items-start justify-center h-[70vh] pt-2 overflow-auto">
             <div className="grid grid-cols-3 w-[80%] p-4 gap-4">
               {tournaments.map((tournament) => (
                 <motion.div
@@ -67,7 +67,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="final h-screen w-screen bg-[#172330] flex justify-center items-end ">
+      <div className="snap-start h-screen w-screen bg-[#172330] flex justify-center items-end">
         <div className="h-[89%] w-[90%] border-x border-t border-gray-300 flex items-center justify-center flex-col">
           <div className='w-full h-[13.5%] flex'>
             <div className='h-full w-[70%] border-b border-gray-300 border-r'></div>
@@ -106,7 +106,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="h-screen w-screen flex flex-col bg-[#adfdss] text-white">
+      <div className="snap-start h-screen w-screen flex flex-col bg-[#adfdss] text-white">
         <div className="w-full h-[35%] flex items-end justify-center">
           <span className="font-bold text-[11rem]">Title Merch</span>
         </div>
@@ -156,7 +156,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className='h-screen w-screen bg-yellow-200 add-bg-community p-7 flex flex-col items-center justify-center'>
+      <div className='snap-start h-screen w-screen bg-yellow-200 add-bg-community p-7 flex flex-col items-center justify-center'>
         <span className='text-9xl font-bold text-[#FABC57]'>COMMUNITY</span>
         <button
           onClick={handleCommunityClick}

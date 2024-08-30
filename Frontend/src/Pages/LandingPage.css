@@ -60,7 +60,7 @@ h2 {
 }
 
 .description {
-  background-image: url("");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/gta6.jpg?alt=media&token=69278cf1-83f4-40fe-a93b-4937c8a0d8eax");
   background-size: cover; /* Adjust to your desired size */
   background-position: center;
 }
@@ -99,6 +99,15 @@ h2 {
   -webkit-text-stroke: 0.5px white; /* Width and color of the outline */
   text-transform: uppercase; /* To ensure the text is capitalized */
 }
+.snap-container {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+
 
 .custom-line-height {
   line-height: 10px; 
