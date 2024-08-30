@@ -1,0 +1,36 @@
+.background-tournaments {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/pixelcut-export.jpeg?alt=media&token=b1e8d722-a71c-4baa-b8bc-321ed0db3d51"); /* Adjust the path as needed */
+  background-size: cover; /* Optional: Adjust as needed */
+  background-position: top; /* Optional: Adjust as needed */
+  background-repeat: no-repeat; /* Optional: Adjust as needed */
+}
+.semicircle {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
+  background-color: #121c26;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  z-index: 1;
+}
+
+.tournament-card {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.tournament-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.shadow-text {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
