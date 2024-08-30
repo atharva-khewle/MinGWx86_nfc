@@ -6,6 +6,9 @@
   font-family: 'Lufga', sans-serif;
 }
 
+
+
+
 body {
     background-color: #222;
     color: #ddd;
@@ -42,17 +45,16 @@ body {
   }
   
   .box {
-    height: 80vh;
+    height: 50vh;  
     text-align: center;
-    line-height: 80px;
+    line-height: 10px;
     background-color: white;
     border-radius: 8px;
     color: #222;
     font-weight: 700;
     will-change: transform;
-    width: 5000px;
-
   }
+  
   .box.active {
     background-color: orange;
     border: 2px solid white;
@@ -87,19 +89,21 @@ body {
 
 
 .custom-line-height {
-  line-height: 10px; /* Adjust this value as needed */
+  line-height: 10px; 
 }
 
   
   .container {
-    width: 500%;
-    height: 100vh;
+    width: 10000vw;
+    height: 1000vh;
     display: flex;
     /* flex-wrap: nowrap; */
   }
   
   .panel {
     font-weight: 300;
+    /* width: 1000vw; */
+
   }
   
   code {
@@ -113,3 +117,4 @@ body {
     font-size: 1.7rem;
   }
   
+

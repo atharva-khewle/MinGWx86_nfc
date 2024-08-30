@@ -16,7 +16,7 @@ function Peer({ peer }) {
       />
       <div className="peer-overlay">
         <div className="peer-name">
-          {peer.name} {peer.isLocal ? "(You)" : ""}
+          {/* {peer.name} {peer.isLocal ? "You" : ""} */}
         </div>
       </div>
     </div>

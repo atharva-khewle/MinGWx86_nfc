@@ -10,7 +10,7 @@ const LandingPage = () => {
     const sections = gsap.utils.toArray('.panel');
 
     const scrollTween = gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
+      xPercent: -10 * (sections.length - 1),
       ease: 'none', // <-- IMPORTANT!
       scrollTrigger: {
         trigger: '.container',
@@ -51,12 +51,12 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="container bg-red-300">
-        <section className="panel  m-2 blue">
+      <div className="container overflow-hidden bg-red-900">
+        <section className="panel w-[1000vw] m-2 blue">
           <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-1" className="box-1 box"  />
         </section>
 
-        <section className="panel m-2 blue">
+        <section className="panel w-[1000vw] m-2 blue">
           <img src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fatharva.png?alt=media&token=ababa798-5f3c-4e4e-bb17-c1a2b108f51b" alt="box-1" className="box-1 box" />
         </section>
         
