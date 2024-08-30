@@ -104,34 +104,6 @@ h2 {
   line-height: 10px; 
 }
 
-<<<<<<< HEAD
-  
-  .container {
-    width: 10000vw;
-    height: 1000vh;
-    display: flex;
-    /* flex-wrap: nowrap; */
-  }
-  
-  .panel {
-    font-weight: 300;
-    /* width: 1000vw; */
-
-  }
-  
-  code {
-    padding: 0.1rem;
-    background: #fff;
-    color: #222;
-    font-size: 1.5rem;
-  }
-  
-  h1 code {
-    font-size: 1.7rem;
-  }
-  
-
-=======
 .container {
   width: 500%;
   height: 100vh;
@@ -153,4 +125,3 @@ code {
 h1 code {
   font-size: 1.7rem;
 }
->>>>>>> cd68779ecd7fb1bc4f2845574a98801a11b791bb
