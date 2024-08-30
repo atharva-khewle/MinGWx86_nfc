@@ -8,6 +8,7 @@ import CommunityForum from "./Pages/Community";
 import WebCam from "./components/Webcam";
 import CameraCapture from "./components/Camera";
 import Merch from "./Pages/Merch.jsx";
+import FormModal from "./Pages/Signup.jsx";
 import {
   useHMSStore,
   useHMSActions,
@@ -31,6 +32,7 @@ function App() {
         <Route path="/meet" element={<WebCam />} />
         <Route path="/merch" element={<Merch />} />
         <Route path="/matchingalgo" element={<MatchComponent />} />
+        <Route path="/signup" element={<FormModal />} />
       </Routes>
     </Router>
   );

@@ -5,7 +5,8 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 const registerUser = asyncHandler(async (req, res) => {
-    const { name,email, password, gender } = req.body;
+    const {name,email, password, gender,interest} = req.body;
+    console.log(req.body.pfp)
 
     // Validation
     if (
@@ -40,7 +41,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
     const user = await User.create({
         name: name,
-        interest:[],
+        interest: interest,
         gender,
         email,
         password,
@@ -114,15 +115,15 @@ const loginUser = asyncHandler(async (req, res) => {
 
     // console.log(req.body)
     console.log(req.body)
-    const {email, name, password} = req.body
+    const {email, password} = req.body
     // console.log(email)
-    if(!name && !email){
-        throw new ApiError(400, "Username or Email is required")
+    if(!email){
+        throw new ApiError(400, "Email is required")
     }
 
 
     const user = await User.findOne({
-        $or: [{name}, {email}]
+        $or: [{email}]
     })
 
     if(!user){
