@@ -7,7 +7,6 @@ function JoinForm() {
   const [inputValues, setInputValues] = useState({
     name: "",
     roomCode: "",
-    roomCode: "",
   });
 
   const handleInputChange = (e) => {
@@ -22,7 +21,8 @@ function JoinForm() {
     const { name, roomCode } = inputValues;
 
     // use room code to fetch auth token
-    const authToken = "YOUR_AUTH_TOKEN"; // replace with actual token
+    const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoyLCJ0eXBlIjoiYXBwIiwiYXBwX2RhdGEiOm51bGwsImFjY2Vzc19rZXkiOiI2NmQwMDA2NjMzY2U3NGFiOWJlOTNiYmEiLCJyb2xlIjoiaG9zdCIsInJvb21faWQiOiI2NmQwMDA3MmQ0ZTliMzJhOGY4MTkwOTQiLCJ1c2VyX2lkIjoiMTljZTdiZDEtOTAyMS00ZTYyLWIxMzYtZjIwMjhkMjgxOTZjIiwiZXhwIjoxNzI0OTk1NDUyLCJqdGkiOiIwYzE3OGExOC0xOTAxLTRjNTAtYTlkYy05YzM0NjVhMTczODMiLCJpYXQiOjE3MjQ5MDkwNTIsImlzcyI6IjY2ZDAwMDY2MzNjZTc0YWI5YmU5M2JiOCIsIm5iZiI6MTcyNDkwOTA1Miwic3ViIjoiYXBpIn0.iwkaN589QeehCgb_6_xUaGDAfxql6S33pmSsYNIylx8";
+     
 
     try {
       await hmsActions.join({ userName: name, authToken });
