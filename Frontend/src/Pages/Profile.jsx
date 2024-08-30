@@ -5,10 +5,10 @@ import { Chart as ChartJS } from "chart.js/auto";
 
 const Profile = () => {
   const data = {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Chess", "Valorant", "GTA", "Cyberpunk", "CSGO", ],
     datasets: [
       {
-        label: "Sales",
+        label: "Wins",
         data: [65, 59, 80, 81, 56, 55],
         backgroundColor: "rgb(102, 0, 51)",
         borderColor: "rgb(102, 0, 51))",
@@ -23,17 +23,17 @@ const Profile = () => {
         <div className="w-[30vw] glass-overlay-brown flex flex-col justify-center rounded-[1.8rem] p-8  items-center shadow-lg backdrop-blur-md bg-opacity-30">
           {/* Profile Image */}
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2FJash.JPG?alt=media&token=9bdc90ec-805b-46af-a9ce-43d0a66b4b66"
+            src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2FJuhi.jpg?alt=media&token=33b59920-a019-458e-a925-4cfda021d74a"
             alt="Profile"
             className="w-40 h-40 rounded-full object-cover mb-4 border-4 border-white shadow-md"
           />
           {/* Profile Name */}
           <h2 className="text-xl font-bold text-[#ffffff] text-[2.4rem] mb-3">
-            Jash Shah
+            Juhi Deore
           </h2>
           {/* Profile Email */}
           <p className="text-md text-[#ffffff] text-[1.3rem] font-medium">
-            jash.shah@example.com
+            Juhi@gmail.com
           </p>
         </div>
         <div className="w-[60vw] glass-overlay-white p-8 rounded-[1.8rem] shadow-lg">
@@ -50,18 +50,20 @@ const Profile = () => {
                 alt="Profile"
                 className="w-32 h-32 rounded-full object-cover  shadow-md"
               />
-              <div className="flex flex-col items-center font-normal">
-                <h1>Main hoon bhai</h1> <p>Kya bhai</p>{" "}
+              <div className="flex flex-col items-center font-normal text-black">
+                <h1 className="text-black font-semibold">Jash</h1> <p>jash@gmail.com</p>{" "}
               </div>{" "}
             </div>
             <div className="glass-overlay-brown p-4 rounded shadow-lg min-w-[200px]">
-              ghghj
+              <h1>Zeeshan</h1> <p>zeeshan@gmail.com</p>{" "}
             </div>
             <div className="glass-overlay-white p-4 rounded shadow-lg min-w-[200px]">
-              ghghj
+            <h1>Atharva</h1> <p>athar@gmail.com</p>{" "}
+
             </div>
             <div className="glass-overlay-brown p-4 rounded shadow-lg min-w-[200px]">
-              ghghj
+            <h1>Om</h1> <p>om@gmail.com</p>{" "}
+
             </div>
           </div>
         </div>

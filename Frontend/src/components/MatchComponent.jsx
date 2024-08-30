@@ -12,9 +12,9 @@ const MatchComponent = () => {
     // Simulate searching with a delay
     const timer = setTimeout(() => {
       // Set the matched profile photo URL
-      setMatchProfile("https://via.placeholder.com/300"); // Replace with actual match photo URL
+      setMatchProfile("https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2FJash.JPG?alt=media&token=9bdc90ec-805b-46af-a9ce-43d0a66b4b66"); // Replace with actual match photo URL
       setIsSearching(false);
-
+//https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2FJuhi.jpg?alt=media&token=33b59920-a019-458e-a925-4cfda021d74a
       // Redirect after a short delay
       setTimeout(() => {
         navigate("/meet");
@@ -35,7 +35,7 @@ const MatchComponent = () => {
           unmountOnExit
         >
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2FJash.JPG?alt=media&token=9bdc90ec-805b-46af-a9ce-43d0a66b4b66"
+            src="https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2FJuhi.jpg?alt=media&token=33b59920-a019-458e-a925-4cfda021d74a"
             alt="User Profile"
             className="rounded-full w-64 h-64 object-cover shadow-lg"
           />

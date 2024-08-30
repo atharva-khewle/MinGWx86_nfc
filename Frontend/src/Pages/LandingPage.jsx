@@ -2,7 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import axios for making HTTP requests
+import { FaUserCircle } from 'react-icons/fa'; // Import a user icon
 import './LandingPage.css'; // Import your CSS file here
+import logo from "../../public/logo.png";
 
 const tournaments = [
   { id: 1, title: 'Chess', link: 'https://example.com/chess' },
@@ -46,7 +48,7 @@ const LandingPage = () => {
       const response = await axios.get('http://localhost:3456/api/v1/users/match');
       const users = response.data;
 
-      console.log(users.users)
+      console.log(users.users);
       const userCount = userCountMap[tournamentTitle] || 0;
       const usersToLog = users.users.slice(0, userCount); // Get the number of users to log
       
@@ -56,11 +58,23 @@ const LandingPage = () => {
     }
   };
 
+  const handleProfileClick = () => {
+    navigate('/profile'); // Navigate to /profile route
+  };
+
   return (
     <div className='snap-container h-[100vh] w-[100vw] overflow-y-scroll'>
+      {/* User Icon at the top right */}
+      <div className="absolute top-4 right-4">
+        <FaUserCircle
+          onClick={handleProfileClick}
+          className="text-4xl text-white cursor-pointer hover:text-gray-300 transition-colors"
+        />
+      </div>
+
       <div className="snap-start description h-screen w-screen bg-yellow-300 flex items-center justify-center p-10">
         <div className='text-8xl text-white font-black'>
-          PROJECT TITLE
+          <img src={logo} alt="" srcSet="" />
         </div>
       </div>
 
@@ -80,7 +94,7 @@ const LandingPage = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "easeIn" }}
                   className="tournament-card cursor-pointer bg-cover bg-gray-300 opacity-80 bg-center rounded-lg shadow-md flex items-center justify-center"
-                  onClick={() => handleRedirect(tournament.link, tournament.title)}
+                  onClick={() => handleRedirect("http://localhost:5173/cameracapture", tournament.title)}
                 >
                   <span className="text-black text-2xl text-center p-2 font-bold">
                     {tournament.title}
@@ -133,7 +147,7 @@ const LandingPage = () => {
 
       <div className="snap-start h-screen w-screen flex flex-col bg-[#adfdss] text-white">
         <div className="w-full h-[35%] flex items-end justify-center">
-          <span className="font-bold text-[11rem]">Title Merch</span>
+          <span className="font-bold text-[11rem]">Yoddha Merch</span>
         </div>
 
         <div className="w-full h-[35%] flex px-[1.1rem] justify-around items-center">

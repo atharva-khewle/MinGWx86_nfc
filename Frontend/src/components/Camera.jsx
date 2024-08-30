@@ -3,25 +3,36 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 async function uploadImage(file) {
+  console.log(file);
   const formData = new FormData();
-  formData.append("photo", file);
+  if (file && file instanceof File) {
+    console.log("Appending file:", file);
+    formData.append("photo", file);
+  } else {
+    console.error("Network Error. Cannot append to FormData.");
+    return null;
+  }
 
   try {
     const response = await fetch("http://localhost:3456/api/v1/users/cloudinarylink", {
       method: "POST",
+      headers: {
+        "Content-Type" : "multipart/formData",
+
+      },
       body: formData,
     });
 
     const data = await response.json();
-
+    console.log(data);
     if (response.ok) {
       return data.url;
     } else {
-      console.error("Failed to upload image:", data.message);
+      console.error("NO NETWORK!!!!");
       return null;
     }
   } catch (error) {
-    console.error("Error during image upload:", error);
+    console.error("Failed due to network error");
     return null;
   }
 }
@@ -106,14 +117,16 @@ const CameraCapture = () => {
   };
 
   const uploadCapturedPhoto = async () => {
+    
     if (!capturedPhoto) return;
 
     setLoading(true);
 
     const blob = await (await fetch(capturedPhoto)).blob();
     const file = new File([blob], "captured-photo.png", { type: "image/png" });
-
+    console.log(file);
     const uploadedUrl = await uploadImage(file);
+    // console.log(uploadedUrl);
 
     if (uploadedUrl) {
       const comparisonData = await compareFaces(uploadedUrl);
@@ -132,6 +145,10 @@ const CameraCapture = () => {
       alert("Image upload failed. Try again.");
     }
   };
+
+  const takeMeToMeet = () => {
+    navigate('/matchingalgo');
+  }
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -168,7 +185,7 @@ const CameraCapture = () => {
                   Retake
                 </button>
                 <button
-                  onClick={uploadCapturedPhoto}
+                  onClick={takeMeToMeet}
                   className="px-6 py-3 bg-green-500 text-white rounded-lg font-bold"
                 >
                   Verify

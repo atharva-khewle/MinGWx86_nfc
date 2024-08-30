@@ -76,13 +76,13 @@ function WebCam() {
                 <Conference />
                 <div className="linkdiv">
                   <button
-                    className="play-now-btn"
+                    className="play-now-btn mr-1"
                     onClick={() => window.open('https://smashkarts.io/', '_blank')}
                   >
-                    Play Now
+                    Try another fun game
                   </button>
                   <button
-                    className="play-now-btn mt-4"
+                    className="play-now-btn mt-4 ml-1"
                     onClick={() => window.open('https://lichess.org/', '_blank')}
                   >
                     Play Chess
