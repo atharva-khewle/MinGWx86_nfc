@@ -39,11 +39,11 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className='snap-start h-screen w-screen bg-orange-100'>
+      <div className='snap-start matchingames h-screen w-screen bg-orange-100'>
         <div className="flex flex-col items-center justify-start p-8 min-h-full">
-          <div className="w-[80%] flex flex-col items-center justify-center mb-8">
+          <div className=" w-[80%] flex flex-col items-center justify-center mb-8">
             <div className="text-[2.8rem] text-white mb-4 text-center font-extrabold">
-              MATCH IN GAMES
+              <div className='lkj p-10'></div>
             </div>
           </div>
           <div className="flex items-start justify-center h-[70vh] pt-2 overflow-auto">
@@ -54,10 +54,10 @@ const LandingPage = () => {
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "easeIn" }}
-                  className="tournament-card cursor-pointer bg-cover bg-red-200 bg-center rounded-lg shadow-md flex items-center justify-center"
+                  className="tournament-card cursor-pointer bg-cover bg-gray-300 opacity-80 bg-center rounded-lg shadow-md flex items-center justify-center"
                   onClick={() => handleRedirect(tournament.link)}
                 >
-                  <span className="text-black text-2xl text-center p-2 font-bold shadow-text">
+                  <span className="text-black text-2xl text-center p-2 font-bold">
                     {tournament.title}
                   </span>
                 </motion.div>

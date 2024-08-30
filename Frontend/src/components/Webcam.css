@@ -17,7 +17,6 @@
 /* Chat3 will take up 20% of the width */
 .chat3 {
     width: 20%;
-    background-color: #000000; /* Optional: Add background to distinguish */
     padding: 20px;
     box-sizing: border-box;
 }

@@ -64,13 +64,23 @@ h2 {
   background-size: cover; /* Adjust to your desired size */
   background-position: center;
 }
+.matchingames {
+  background-image: url("https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2024/04/Arena-Breakout-Infinite_Beta_KV_EN.jpg");
+  background-size: cover; /* Adjust to your desired size */
+  background-position: center;
+}
 
 .add-bg-community {
   background-image: url("https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/VALORANT_phx_jett_2.jpg?alt=media&token=e57de277-a388-424e-9c73-f31e5f173371");
   background-size: contain;
   background-position: center;
 }
-
+.tournament-card{
+  background-color: black;
+  color: white;
+  opacity: 70;
+  backdrop-filter: blur(9910px);
+}
 .rsk {
   font-family: "Roskilde", sans-serif;
 }

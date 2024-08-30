@@ -30,7 +30,7 @@ function WebCam() {
     <>
       {isConnected ? (
         <>
-        <div className="meetuipage flex flex-row">
+        <div className="meetuipage flex flex-row bg-gray-900">
 
         <div className="meetuipage flex flex-row">
     <div className="bablu flex flex-col">
@@ -45,7 +45,7 @@ function WebCam() {
         <Footer />
     </div>
     
-    <div className="chat3">
+    <div className="chat3 bg-gray-950">
         lmaooooooooo
     </div>
 </div>
