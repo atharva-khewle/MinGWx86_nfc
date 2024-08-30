@@ -113,11 +113,16 @@ const LandingPage = () => {
 
         <div className="w-full h-[35%] flex px-[1.1rem] justify-around items-center">
           <div className="h-[90%] w-[20%] bg-pink-500 rounded-full overflow-hidden">
-            <img src="image1.jpg" alt="Model 1" className="h-full w-full object-cover rounded-full" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/WhatsApp_Image_2024-08-30_at_04.41.33-removebg-preview.png?alt=media&token=21b3ca35-d334-44c2-829d-1aa6a98e0c38" alt="Model 1" className="h-[150%] w-full object-contain rounded-full" />
           </div>
           <div className="h-[90%] w-[20%] bg-red-500 rounded-full overflow-hidden">
-            <img src="image2.jpg" alt="Model 2" className="h-full w-full object-cover rounded-full" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/redvalo-removebg-preview.png?alt=media&token=9f3aed3c-c749-419a-9baa-f7f1eda36644"
+              alt="Model 2"
+              className="h-[200%] w-full object-contain rounded-full transform -translate-y-[30%]"
+            />
           </div>
+
           <div 
             className="h-[90%] w-[20%] bg-green-500 rounded-full flex flex-col items-center justify-center text-center overflow-hidden cursor-pointer"
             onClick={handleCatalogClick}
@@ -129,7 +134,7 @@ const LandingPage = () => {
             <img src="https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/girPqIJ_bg_removed.png?alt=media&token=31d22452-bb0f-49c2-8b86-13ee21b12971" alt="Model 3" className="h-[120%] w-full object-contain rounded-full" />
           </div>
           <div className="h-[90%] w-[20%] bg-yellow-500 rounded-full overflow-hidden">
-            <img src="image4.jpg" alt="Model 4" className="h-full w-full object-cover rounded-full" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/09785bbc22c1bccca8187794cb0fc92a-removebg-preview.png?alt=media&token=7f1d511b-48b9-4232-908d-d65b05b15639" alt="Model 4" className="h-[140%] w-full object-contain rounded-full" />
           </div>
         </div>
 
