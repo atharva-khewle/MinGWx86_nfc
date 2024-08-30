@@ -5,9 +5,8 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 const registerUser = asyncHandler(async (req, res) => {
-    const {name,email, password, gender,interest} = req.body;
-    console.log(req.body.pfp)
-
+    const { name, email, password, gender, interest } = req.body;
+    console.log(req.body.pfp);
     // Validation
     if (
         [name, email, password].some((field) => {
@@ -254,5 +253,20 @@ const getCurrentUser = asyncHandler(
         )
     }
 )
+
+
+
+// Assuming req.user contains the tokens
+// const getTokens= asyncHandler(async(req, res) => {
+//     if (req.user) {
+//       const { normalToken, accessToken, refreshToken } = req.user;
+//       res.json({ normalToken, accessToken, refreshToken });
+//     } else {
+//       res.status(401).json({ message: 'Unauthorized' });
+//     }
+//   })
+
+  
+
 
 export { registerUser , getCurrentUser, changeCurrentPassword , refreshAccessToken , logoutUser,loginUser};

@@ -38,6 +38,7 @@ function FormModal() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        localStorage.setItem("token","66d14e7d7a26cf86968defd3")
       })
       .catch((error) => {
         console.error(error);

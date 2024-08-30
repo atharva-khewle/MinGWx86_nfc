@@ -21,13 +21,18 @@ router.route("/register").post(
 )
 router.route("/login").post(loginUser)
 
+
+
+
+
+
 let final = []
 let result = [];
 let k = 0;
 
 //match users according to hobbies, genderpref
-router.get("/match", verifyJWT, async (req, res) => {
-  const userId = req.user._id;
+router.get("/match", async (req, res) => {
+  const userId = "66d14e7d7a26cf86968defd3";
   console.log(userId);
   let posts = [];
   let final = [];
@@ -114,16 +119,16 @@ router.post("/cloudinarylink", upload.single("pfp"), async (req, res) => {
   }
 });
 
-router.get("/getUser",verifyJWT,async(req,resp) => {
-  console.log(req.user.id)
-  const userId = req.user.id; 
+router.get("/getUser",async(req,resp) => {
+  console.log("66d14e7d7a26cf86968defd3")
+  const userId = "66d14e7d7a26cf86968defd3"; 
   const user = await User.findById(userId);
   resp.send(user);
 })
 
-router.post("/addUserStats",verifyJWT,async (req,resp) => {
+router.post("/addUserStats",async (req,resp) => {
   const body = req.body;
-  const userId = req.user.id; 
+  const userId = "66d14e7d7a26cf86968defd3"; 
   
   // Find the user by ID
   const user = await User.findById(userId);
