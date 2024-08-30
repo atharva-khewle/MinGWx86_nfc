@@ -36,7 +36,6 @@ function WebCam() {
     <div className="bablu flex flex-col">
         <Conference />
         <div class="linkdiv">
-    Visit Smash Karts
     <button class="play-now-btn" onclick="window.open('https://smashkarts.io/', '_blank')">
         Play Now
     </button>
