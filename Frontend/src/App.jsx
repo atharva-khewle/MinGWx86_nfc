@@ -7,7 +7,7 @@ import { ProfilePage } from "./Pages/ProfilePage";
 import CommunityForum from "./Pages/Community";
 import WebCam from "./components/Webcam";
 import CameraCapture from "./components/Camera";
-import Merch from "./Pages/Merch.jsx"
+import Merch from "./Pages/Merch.jsx";
 import {
   useHMSStore,
   useHMSActions,
@@ -15,6 +15,7 @@ import {
   HMSRoomProvider,
 } from "@100mslive/react-sdk"; // Import HMSRoomProvider
 import MatchComponent from "./components/MatchComponent.jsx";
+import Profile from "./Pages/Profile.jsx";
 // import dotenv from "dotenv";
 // dotenv.config();
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/meet" element={<WebCam />} />
         <Route path="/cameracapture" element={<CameraCapture />} />
         <Route path="/community" element={<CommunityForum />} />

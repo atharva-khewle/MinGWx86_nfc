@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roskilde:ital,wght@1,400&display=swap");
+@import url("https://fonts.cdnfonts.com/css/lufga");
+
+.lufga_lelo {
+  font-family: "Lufga", sans-serif;
+}
+
+.outlined-text {
+  font-family: "Roskilde", sans-serif;
+  /* font-style: italic; */
+  color: transparent;
+  -webkit-text-stroke: 1px #fbf2f3; /* Width and color of the outline */
+  text-transform: uppercase; /* To ensure the text is capitalized */
+  font-weight: bold;
+}
+
 .background-tournaments {
   background-image: url("https://firebasestorage.googleapis.com/v0/b/nfc3-2024.appspot.com/o/pixelcut-export.jpeg?alt=media&token=b1e8d722-a71c-4baa-b8bc-321ed0db3d51"); /* Adjust the path as needed */
   background-size: cover; /* Optional: Adjust as needed */
