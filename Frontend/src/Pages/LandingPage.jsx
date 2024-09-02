@@ -1,16 +1,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import axios for making HTTP requests
+import { FaUserCircle } from 'react-icons/fa'; // Import a user icon
 import './LandingPage.css'; // Import your CSS file here
+import logo from "../../public/logo.png";
 
 const tournaments = [
-  { id: 1, title: 'Chess Tournament', link: 'https://example.com/chess' },
-  { id: 2, title: 'Soccer Championship', link: 'https://example.com/soccer' },
-  { id: 3, title: 'Basketball League', link: 'https://example.com/basketball' },
+  { id: 1, title: 'Chess', link: 'https://example.com/chess' },
+  { id: 2, title: 'FIFA', link: 'https://example.com/soccer' },
+  { id: 3, title: 'NBA2k24', link: 'https://example.com/basketball' },
   { id: 4, title: 'Tennis Open', link: 'https://example.com/tennis' },
-  { id: 5, title: 'eSports Tournament', link: 'https://example.com/esports' },
-  { id: 6, title: 'eSports Tournament', link: 'https://example.com/esports' },
+  { id: 5, title: 'Valorant', link: 'https://example.com/esports' },
+  { id: 6, title: 'PUBG Mobile', link: 'https://example.com/esports' },
 ];
+
+const userCountMap = {
+  'Chess': 1,
+  'FIFA': 0, // No action for FIFA
+  'NBA2k24': 0, // No action for NBA2k24
+  'Tennis Open': 0, // No action for Tennis Open
+  'Valorant': 3,
+  'PUBG Mobile': 3
+};
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -27,21 +39,48 @@ const LandingPage = () => {
     navigate('/tournaments'); // Navigate to /tournaments route
   };
 
-  const handleRedirect = (link) => {
+  const handleRedirect = async (link, tournamentTitle) => {
+    // Open the tournament link in a new tab
     window.open(link, "_blank");
+
+    // Make API request and log users based on tournament title
+    try {
+      const response = await axios.get('http://localhost:3456/api/v1/users/match');
+      const users = response.data;
+
+      console.log(users.users);
+      const userCount = userCountMap[tournamentTitle] || 0;
+      const usersToLog = users.users.slice(0, userCount); // Get the number of users to log
+      
+      usersToLog.forEach(user => console.log(user)); // Log each user
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
+  };
+
+  const handleProfileClick = () => {
+    navigate('/profile'); // Navigate to /profile route
   };
 
   return (
-    <div className=' snap-container h-[100vh] w-[100vw] overflow-y-scroll'>
+    <div className='snap-container h-[100vh] w-[100vw] overflow-y-scroll'>
+      {/* User Icon at the top right */}
+      <div className="absolute top-4 right-4">
+        <FaUserCircle
+          onClick={handleProfileClick}
+          className="text-4xl text-white cursor-pointer hover:text-gray-300 transition-colors"
+        />
+      </div>
+
       <div className="snap-start description h-screen w-screen bg-yellow-300 flex items-center justify-center p-10">
         <div className='text-8xl text-white font-black'>
-          PROJECT TITLE
+          <img src={logo} alt="" srcSet="" />
         </div>
       </div>
 
       <div className='snap-start matchingames h-screen w-screen bg-orange-100'>
         <div className="flex flex-col items-center justify-start p-8 min-h-full">
-          <div className=" w-[80%] flex flex-col items-center justify-center mb-8">
+          <div className="w-[80%] flex flex-col items-center justify-center mb-8">
             <div className="text-[2.8rem] text-white mb-4 text-center font-extrabold">
               <div className='lkj p-10'></div>
             </div>
@@ -55,7 +94,7 @@ const LandingPage = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "easeIn" }}
                   className="tournament-card cursor-pointer bg-cover bg-gray-300 opacity-80 bg-center rounded-lg shadow-md flex items-center justify-center"
-                  onClick={() => handleRedirect(tournament.link)}
+                  onClick={() => handleRedirect("http://localhost:5173/cameracapture", tournament.title)}
                 >
                   <span className="text-black text-2xl text-center p-2 font-bold">
                     {tournament.title}
@@ -108,7 +147,7 @@ const LandingPage = () => {
 
       <div className="snap-start h-screen w-screen flex flex-col bg-[#adfdss] text-white">
         <div className="w-full h-[35%] flex items-end justify-center">
-          <span className="font-bold text-[11rem]">Title Merch</span>
+          <span className="font-bold text-[11rem]">Yoddha Merch</span>
         </div>
 
         <div className="w-full h-[35%] flex px-[1.1rem] justify-around items-center">

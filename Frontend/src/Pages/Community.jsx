@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo1 from "../../public/logo1.png"
 
 function CommunityForum() {
   const [forums, setForums] = useState([
@@ -12,16 +13,16 @@ function CommunityForum() {
     1: [
       {
         id: 1,
-        user: 'Rini Nirmala, M.Klin',
-        messages: ['Why is it like this???', 'Why is it like this???'],
-        profileImage: 'https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fkashish.JPG?alt=media&token=3e71f52b-b06f-4e65-89ba-d49569fd76d3'
+        user: 'Juhi Deore',
+        messages: ['WHO WONN???', 'WHO WONN???'],
+        profileImage: 'https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2FJuhi.jpg?alt=media&token=33b59920-a019-458e-a925-4cfda021d74a'
       },
       {
         id: 2,
-        user: 'John Doe',
+        user: 'Jash Rashne',
         messages: ['Guys! I won the first place in Jett Comp Tourney.'],
         profileImage: 'https://via.placeholder.com/150',
-        image: 'https://via.placeholder.com/400x200', // Static image for this post
+        image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fesports.gg%2Fnews%2Fvalorant%2Friot-upgrading-valorant-post-match-win-and-loss-screens%2F&psig=AOvVaw1Jf22eGb75F8r743SQOGMJ&ust=1725084327858000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLjtroqGnIgDFQAAAAAdAAAAABAE', // Static image for this post
       }
     ],
     2: []
@@ -75,7 +76,7 @@ function CommunityForum() {
         // Create a new comment
         const newComment = {
           id: currentComments.length + 1,
-          user: 'Rini Nirmala, M.Klin',
+          user: 'Juhi Deore',
           messages: [newMessage],
           profileImage: 'https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2Fkashish.JPG?alt=media&token=3e71f52b-b06f-4e65-89ba-d49569fd76d3'
         };
@@ -100,7 +101,9 @@ function CommunityForum() {
     <div className="flex h-screen w-full bg-white p-2">
       {/* Sidebar */}
       <aside className="w-64 h-full  flex flex-col">
-        <div className="h-[20%]"> name and logo of app</div> {/* Empty space in sidebar */}
+        <div className="h-[20%] bg-red-100 w-full"> 
+          <img src={logo1} alt="" className='w-ful h-full' />
+          </div> {/* Empty space in sidebar */}
         <div className="h-[80%] border-r  flex flex-col">
           {forums.map((forum) => (
             <div

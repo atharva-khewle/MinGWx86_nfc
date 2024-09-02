@@ -97,7 +97,7 @@ const Merch = () => {
   return (
     <div className="p-8 font-sans bg-white h-screen w-screen overflow-auto">
       <header className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-black">Title Merch</h1>
+        <h1 className="text-3xl font-bold text-black">Yoddha Merch</h1>
         <nav>
           <ul className="flex space-x-6">
             <li>
