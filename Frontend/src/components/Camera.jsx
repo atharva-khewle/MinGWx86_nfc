@@ -27,8 +27,10 @@ async function uploadImage(file) {
 }
 
 async function compareFaces(uploadedUrl) {
-  const fixedUrl = "https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2FJash.JPG?alt=media&token=9bdc90ec-805b-46af-a9ce-43d0a66b4b66";
-
+  const fixedUrl =
+    "http://res.cloudinary.com/dgbgxtsrl/image/upload/v1725000266/tvgdoeaztvor1bfrxiub.png";
+  console.log("ypypppppppppppppp");
+  console.log(uploadedUrl);
   const convertToBase64 = async (url) => {
     const response = await fetch(url);
     const blob = await response.blob();
@@ -42,16 +44,17 @@ async function compareFaces(uploadedUrl) {
 
   const [uploadedImageBase64, fixedImageBase64] = await Promise.all([
     convertToBase64(uploadedUrl),
-    convertToBase64(fixedUrl)
+    convertToBase64(fixedUrl),
   ]);
 
   const formData = new FormData();
-  formData.append('image1Base64', uploadedImageBase64);
-  formData.append('image2Base64', fixedImageBase64);
-
+  formData.set("image1Base64", uploadedImageBase64);
+  formData.append("image1Base64", uploadedImageBase64);
+  formData.append("image2Base64", fixedImageBase64);
+  console.log(formData);
   try {
     const response = await axios.post(
-      'https://face-verification2.p.rapidapi.com/faceverification',
+      "https://face-verification2.p.rapidapi.com/faceverification",
       formData,
       {
         headers: {
@@ -61,6 +64,8 @@ async function compareFaces(uploadedUrl) {
         }
       }
     );
+    console.log("responseeeeeeeeeeee");
+    console.log(response);
 
     return response.data;
   } catch (error) {
@@ -93,7 +98,13 @@ const CameraCapture = () => {
 
   const capturePhoto = () => {
     const context = canvasRef.current.getContext("2d");
-    context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
+    context.drawImage(
+      videoRef.current,
+      0,
+      0,
+      canvasRef.current.width,
+      canvasRef.current.height
+    );
     const photo = canvasRef.current.toDataURL("image/png");
     setCapturedPhoto(photo);
   };
@@ -121,7 +132,7 @@ const CameraCapture = () => {
         setLoading(false);
         setSuccess(true);
         setTimeout(() => {
-          navigate('/matchingalgo');
+          navigate("/matchingalgo");
         }, 2000); // Wait 2 seconds before navigating
       } else {
         setLoading(false);
@@ -137,7 +148,12 @@ const CameraCapture = () => {
     <div className="flex flex-col items-center justify-center h-screen">
       {!capturedPhoto ? (
         <div className="relative">
-          <video ref={videoRef} width="640" height="480" className="border-2 border-gray-300 rounded-lg" />
+          <video
+            ref={videoRef}
+            width="640"
+            height="480"
+            className="border-2 border-gray-300 rounded-lg"
+          />
           <button
             onClick={capturePhoto}
             className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-lg font-bold"
@@ -149,17 +165,26 @@ const CameraCapture = () => {
         <div className="relative">
           {loading ? (
             <div className="flex flex-col items-center">
-              <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status"></div>
+              <div
+                className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"
+                role="status"
+              ></div>
               <span className="mt-4 text-gray-700">Processing...</span>
             </div>
           ) : success ? (
             <div className="flex flex-col items-center">
-              <div className="text-green-500 text-lg font-bold">Verification Successful!</div>
+              <div className="text-green-500 text-lg font-bold">
+                Verification Successful!
+              </div>
               <span className="mt-4 text-gray-700">Redirecting...</span>
             </div>
           ) : (
             <div>
-              <img src={capturedPhoto} alt="Captured" className="border-2 border-gray-300 rounded-lg" />
+              <img
+                src={capturedPhoto}
+                alt="Captured"
+                className="border-2 border-gray-300 rounded-lg"
+              />
               <div className="mt-4 flex space-x-4">
                 <button
                   onClick={retakePhoto}
@@ -178,7 +203,12 @@ const CameraCapture = () => {
           )}
         </div>
       )}
-      <canvas ref={canvasRef} width="640" height="480" style={{ display: "none" }}></canvas>
+      <canvas
+        ref={canvasRef}
+        width="640"
+        height="480"
+        style={{ display: "none" }}
+      ></canvas>
     </div>
   );
 };
