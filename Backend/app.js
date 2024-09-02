@@ -44,7 +44,7 @@ app.post("/tournaments", async (req, res) => {
   try {
     const { query } = req.body;
     const apiKey =
-      "faf77a60da15f38033845500f580e07a5056996fe55844af874cbd095e545f43";
+      "6da5f36d87c3d603affea2b2c877b99e964af969a889d9dc8bbad8d030f043c0";
 
     if (!apiKey) {
       throw new Error("API key is missing");
@@ -57,7 +57,7 @@ app.post("/tournaments", async (req, res) => {
         q: `${query} online tournaments`,
         num: 15,
         api_key:
-          "faf77a60da15f38033845500f580e07a5056996fe55844af874cbd095e545f43",
+          "6da5f36d87c3d603affea2b2c877b99e964af969a889d9dc8bbad8d030f043c0",
       },
     });
 

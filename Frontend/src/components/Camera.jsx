@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 async function uploadImage(file) {
   console.log(file);
@@ -14,14 +14,16 @@ async function uploadImage(file) {
   }
 
   try {
-    const response = await fetch("http://localhost:3456/api/v1/users/cloudinarylink", {
-      method: "POST",
-      headers: {
-        "Content-Type" : "multipart/formData",
-
-      },
-      body: formData,
-    });
+    const response = await fetch(
+      "http://localhost:3456/api/v1/users/cloudinarylink",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "multipart/formData",
+        },
+        body: formData,
+      }
+    );
 
     const data = await response.json();
     console.log(data);
@@ -39,9 +41,8 @@ async function uploadImage(file) {
 
 async function compareFaces(uploadedUrl) {
   const fixedUrl =
-    "http://res.cloudinary.com/dgbgxtsrl/image/upload/v1725000266/tvgdoeaztvor1bfrxiub.png";
-  console.log("ypypppppppppppppp");
-  console.log(uploadedUrl);
+    "https://firebasestorage.googleapis.com/v0/b/tsec-app.appspot.com/o/DevsMember%2F2024%2FJash.JPG?alt=media&token=9bdc90ec-805b-46af-a9ce-43d0a66b4b66";
+
   const convertToBase64 = async (url) => {
     const response = await fetch(url);
     const blob = await response.blob();
@@ -59,24 +60,22 @@ async function compareFaces(uploadedUrl) {
   ]);
 
   const formData = new FormData();
-  formData.set("image1Base64", uploadedImageBase64);
   formData.append("image1Base64", uploadedImageBase64);
   formData.append("image2Base64", fixedImageBase64);
-  console.log(formData);
+
   try {
     const response = await axios.post(
       "https://face-verification2.p.rapidapi.com/faceverification",
       formData,
       {
         headers: {
-          'Content-Type': 'multipart/form-data',
-          'x-rapidapi-key': '83053069cdmsh7d25cf3da7e84a1p150cd1jsn12629eeb2228',
-          'x-rapidapi-host': 'face-verification2.p.rapidapi.com'
-        }
+          "Content-Type": "multipart/form-data",
+          "x-rapidapi-key":
+            "83053069cdmsh7d25cf3da7e84a1p150cd1jsn12629eeb2228",
+          "x-rapidapi-host": "face-verification2.p.rapidapi.com",
+        },
       }
     );
-    console.log("responseeeeeeeeeeee");
-    console.log(response);
 
     return response.data;
   } catch (error) {
@@ -128,7 +127,6 @@ const CameraCapture = () => {
   };
 
   const uploadCapturedPhoto = async () => {
-    
     if (!capturedPhoto) return;
 
     setLoading(true);
@@ -158,8 +156,8 @@ const CameraCapture = () => {
   };
 
   const takeMeToMeet = () => {
-    navigate('/matchingalgo');
-  }
+    navigate("/matchingalgo");
+  };
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
